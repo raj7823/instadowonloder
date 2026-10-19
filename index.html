@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090812">
+<meta name="description" content="INSTA-DM — a simple interface for Instagram media links.">
+<title>INSTA-DM | Instagram Media Tools</title>
+</head>
+<body>
+
+<!-- INSTA-DM | Blogger Website -->
+<div id="instadm">
+<style>
+#instadm{
+  background:#090812;color:#fff;font-family:Arial,sans-serif;
+  max-width:1100px;margin:15px auto;padding:28px;
+  border:1px solid #302b45;border-radius:22px;
+  box-sizing:border-box;
+}
+#instadm *{box-sizing:border-box}
+#instadm .brand{text-align:center;font-size:24px;font-weight:900}
+#instadm .brand span{color:#bd91ff}
+#instadm .nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:22px 0 45px}
+#instadm button{border:0;border-radius:10px;padding:13px 17px;color:#fff;background:linear-gradient(110deg,#ff4ba4,#9850ff);font-weight:bold;cursor:pointer}
+#instadm .nav button{background:#1c1829;border:1px solid #413654;font-size:12px}
+#instadm .eyebrow{text-align:center;color:#d4baff;letter-spacing:2px;font-size:11px}
+#instadm h1{text-align:center;font-size:clamp(38px,7vw,70px);line-height:1.08;letter-spacing:-2px}
+#instadm .gradient{background:linear-gradient(90deg,#ff75ba,#b99aff,#75e7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+#instadm .intro{max-width:620px;margin:0 auto 28px;text-align:center;color:#aaa7c2;line-height:1.8;font-size:14px}
+#instadm .download-box{max-width:760px;margin:auto;background:#171525;border:1px solid #413654;border-radius:17px;padding:12px}
+#instadm .input-row{display:flex;gap:10px}
+#instadm input{flex:1;min-width:0;background:#0b0a13;color:#fff;border:1px solid #39354e;border-radius:10px;padding:16px;font-size:14px}
+#instadm .hint{padding:12px 4px 3px;color:#9994ae;font-size:11px;line-height:1.7}
+#instadm .message{display:none;background:#281c38;color:#eee0ff;padding:14px;margin-top:10px;border-radius:10px;font-size:13px;line-height:1.7}
+#instadm .message.show{display:block}
+#instadm .trust{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:24px 0 50px;color:#c5c0d7;font-size:12px}
+#instadm h2{text-align:center;font-size:clamp(25px,4vw,37px);margin:42px 0 12px}
+#instadm .desc{text-align:center;color:#aaa7c2;font-size:13px;line-height:1.8;max-width:600px;margin:0 auto 25px}
+#instadm .cards,#instadm .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#instadm .card,#instadm .step{padding:21px;border:1px solid #302b45;border-radius:15px;background:#151320}
+#instadm .icon{font-size:26px}
+#instadm .card h3{font-size:15px}
+#instadm .card p,#instadm .step p{color:#aaa7c2;font-size:13px;line-height:1.8}
+#instadm .step b{color:#d0b1ff}
+#instadm details{max-width:760px;margin:auto;border-bottom:1px solid #302b45;padding:17px 4px}
+#instadm summary{cursor:pointer;font-size:14px;font-weight:bold}
+#instadm details p{color:#aaa7c2;font-size:13px;line-height:1.8}
+#instadm .page-panel{display:none}
+#instadm .legal{max-width:850px;margin:15px auto;padding:15px}
+#instadm .legal h2{text-align:left}
+#instadm .legal p,#instadm .legal li{color:#aaa7c2;font-size:13px;line-height:1.9}
+#instadm .legal a{color:#d0b1ff}
+#instadm .ad-slot{min-height:70px;border:1px dashed #4a405f;border-radius:12px;display:flex;align-items:center;justify-content:center;text-align:center;color:#89849f;font-size:11px;padding:12px;margin:28px auto}
+#instadm .notice{margin-top:30px;padding:17px;border:1px solid #443854;border-radius:12px;color:#aaa7c2;font-size:12px;line-height:1.8}
+#instadm .footer{text-align:center;border-top:1px solid #302b45;margin-top:30px;padding-top:20px;color:#89849f;font-size:12px}
+@media(max-width:650px){
+ #instadm{padding:18px}
+ #instadm .input-row{flex-direction:column}
+ #instadm .input-row button{width:100%}
+ #instadm .cards,#instadm .steps{grid-template-columns:1fr}
+}
+</style>
+
+<div class="brand">✦ INSTA-<span>DM</span></div>
+
+<div class="nav">
+<button data-page="home">Home</button>
+<button data-page="about">About Us</button>
+<button data-page="privacy">Privacy Policy</button>
+<button data-page="terms">Terms</button>
+<button data-page="contact">Contact</button>
+</div>
+
+<div id="id-home" class="page-panel">
+<div class="eyebrow">FREE MEDIA TOOLS FOR CREATORS</div>
+<h1>Save what inspires<br><span class="gradient">you.</span></h1>
+<p class="intro">A simple, fast and mobile-friendly interface for Instagram media links. Use it with content you own or have permission to save.</p>
+
+<div class="download-box">
+<div class="input-row">
+<input id="id-url" type="url" placeholder="Paste Instagram post or Reel link..." aria-label="Instagram URL">
+<button id="id-submit" type="button">Continue ↗</button>
+</div>
+<div class="hint">Paste a public Instagram URL to validate its format. Actual downloads require a supported, authorized backend.</div>
+<div id="id-message" class="message" role="status" aria-live="polite"></div>
+</div>
+
+<div class="trust">
+<span>✓ Free to use</span>
+<span>✓ Mobile friendly</span>
+<span>✓ Privacy conscious</span>
+</div>
+
+<div class="ad-slot">Advertisement space — add approved ad-network code here.</div>
+
+<h2>Made to feel <span class="gradient">premium.</span></h2>
+<p class="desc">A simple experience with the essentials up front.</p>
+
+<div class="cards">
+<div class="card"><div class="icon">⚡</div><h3>Fast & Responsive</h3><p>Lightweight design for phones, tablets and computers.</p></div>
+<div class="card"><div class="icon">▣</div><h3>Photos & Videos</h3><p>Designed for Reel, photo and video workflows when a provider supports them.</p></div>
+<div class="card"><div class="icon">♢</div><h3>Privacy First</h3><p>No Instagram password collection or private-account bypass.</p></div>
+<div class="card"><div class="icon">↗</div><h3>Link Validation</h3><p>Check your Instagram link format before processing.</p></div>
+<div class="card"><div class="icon">✦</div><h3>Creator Friendly</h3><p>Clear instructions and uncluttered controls.</p></div>
+<div class="card"><div class="icon">◎</div><h3>Ready to Grow</h3><p>Add original content and compliant ads as your site develops.</p></div>
+</div>
+
+<h2>How It Works</h2>
+<p class="desc">Three simple steps to get started.</p>
+<div class="steps">
+<div class="step"><b>STEP 01</b><p>Copy a link to content you own or have permission to save.</p></div>
+<div class="step"><b>STEP 02</b><p>Paste the Instagram URL into the box above.</p></div>
+<div class="step"><b>STEP 03</b><p>Connect an authorized media provider to enable real downloads.</p></div>
+</div>
+
+<h2>Frequently Asked Questions</h2>
+<details><summary>Is INSTA-DM free?</summary><p>This frontend is free to use. Hosting and third-party providers may have costs.</p></details>
+<details><summary>Can I download private account posts?</summary><p>A URL alone does not grant access to private posts. Only owner-authorized access through a supported provider should be used.</p></details>
+<details><summary>Does this website download files now?</summary><p>No. This code validates the URL format. A real download feature requires a supported backend or provider.</p></details>
+<details><summary>Can I monetize the website?</summary><p>You may apply to suitable advertising programs after adding useful original content and complying with their policies. Approval and earnings are not guaranteed.</p></details>
+</div>
+
+<section id="id-about" class="legal page-panel">
+<h2>About INSTA-DM</h2>
+<p>INSTA-DM is an independent project providing a simple interface for working with Instagram media links. This version validates URLs and does not itself retrieve media.</p>
+<p>INSTA-DM is not affiliated with, sponsored by, or endorsed by Instagram or Meta.</p>
+</section>
+
+<section id="id-privacy" class="legal page-panel">
+<h2>Privacy Policy</h2>
+<p><b>Last updated: 19 October 2026</b></p>
+<h3>Information you enter</h3>
+<p>This starter checks the URL in your browser. It does not send the URL to an INSTA-DM backend because this version has no downloader backend.</p>
+<h3>Cookies and advertising</h3>
+<p>This template does not intentionally set analytics or advertising cookies. If you add Blogger features, analytics or advertising services, update this policy to describe their actual data practices.</p>
+<h3>Third-party services</h3>
+<p>Third-party services have their own terms and privacy policies. Update this policy whenever your site's functionality or data practices change.</p>
+<h3>Contact</h3>
+<p>Email: <b>YOUR_EMAIL@example.com</b>. Replace this placeholder with your real email before publishing.</p>
+</section>
+
+<section id="id-terms" class="legal page-panel">
+<h2>Terms of Use</h2>
+<p><b>Last updated: 19 October 2026</b></p>
+<h3>Permitted use</h3>
+<p>Use this website lawfully and only with content you own or have permission to save. You are responsible for respecting creators' rights and platform terms.</p>
+<h3>Private content</h3>
+<p>This website does not unlock private posts or bypass account permissions. A URL alone does not grant access to private content.</p>
+<h3>Functionality</h3>
+<p>This template validates Instagram URLs. It does not retrieve or download media. Any future download feature requires a supported, authorized provider.</p>
+<h3>Contact</h3>
+<p>Replace YOUR_EMAIL@example.com with your real email before publishing.</p>
+</section>
+
+<section id="id-contact" class="legal page-panel">
+<h2>Contact Us</h2>
+<p>For feedback or legal requests, contact:</p>
+<p><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></p>
+<p>Replace the placeholder email with an address you control before publishing.</p>
+</section>
+
+<div class="notice"><b>Use responsibly:</b> Save only content you own or have permission to download. Private posts cannot be unlocked from a URL alone. INSTA-DM is an independent project and is not affiliated with Instagram.</div>
+<div class="footer">© <span id="id-year"></span> INSTA-DM · Independent project</div>
+
+<script>
+(function(){
+var root=document.getElementById('instadm');if(!root)return;
+var panels={
+home:root.querySelector('#id-home'),
+about:root.querySelector('#id-about'),
+privacy:root.querySelector('#id-privacy'),
+terms:root.querySelector('#id-terms'),
+contact:root.querySelector('#id-contact')
+};
+root.querySelector('#id-year').textContent=new Date().getFullYear();
+function showPage(name){
+Object.keys(panels).forEach(function(key){
+panels[key].style.display=(key===name)?'block':'none';
+});
+root.scrollIntoView({behavior:'smooth',block:'start'});
+}
+root.querySelectorAll('[data-page]').forEach(function(button){
+button.addEventListener('click',function(){showPage(button.getAttribute('data-page'));});
+});
+showPage('home');
+var input=root.querySelector('#id-url');
+var message=root.querySelector('#id-message');
+root.querySelector('#id-submit').addEventListener('click',async function(){
+var value=input.value.trim();
+if(!value){message.textContent='Please paste an Instagram link first.';message.className='message show';input.focus();return;}
+var url;
+try{url=new URL(value);}catch(e){message.textContent='Enter a complete valid URL starting with https://';message.className='message show';return;}
+var host = url.hostname.toLowerCase().replace(/\.$/, "");
+if (host !== "instagram.com" && !host.endsWith(".instagram.com")) {
+  message.textContent='Please paste a valid Instagram link, such as https://www.instagram.com/reel/...';
+  message.className='message show';return;
+}
+message.textContent='Checking link…';
+message.className='message show';
+try {
+  var response = await fetch('/api/resolve', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({url:value})
+  });
+  var data = await response.json();
+  message.textContent = data.message || 'The backend responded, but no media provider is configured yet.';
+} catch(err) {
+  message.textContent='Could not reach the backend. Please try again later.';
+}
+message.className='message show';
+});
+input.addEventListener('keydown',function(e){if(e.key==='Enter')root.querySelector('#id-submit').click();});
+})();
+</script>
+</div>
+
+</body>
+</html>

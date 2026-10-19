@@ -1,0 +1,9 @@
+{
+  "name": "insta-dm-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "INSTA-DM frontend and Vercel API starter",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}
